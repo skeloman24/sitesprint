@@ -23,10 +23,24 @@
   "parentOrganization": {"@type": "Organization", "name": "EdgeFinders, LLC"},
   "founder": {"@type": "Person", "name": "Max Fry"},
   "telephone": "+1-215-776-6767",
-  "email": "maxwell.nm.fry@gmail.com",
+  "email": "hello@getsitesprint.com",
   "address": {"@type": "PostalAddress", "addressLocality": "Roswell", "addressRegion": "GA", "postalCode": "30075", "addressCountry": "US"},
   "areaServed": ["Roswell GA", "Alpharetta GA", "Marietta GA", "Sandy Springs GA", "Woodstock GA", "Johns Creek GA", "Milton GA"],
   "priceRange": "$350"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Why is a SiteSprint website only $350?", "acceptedAnswer": {"@type": "Answer", "text": "Because a one-page site doesn't cost $3,000 to build. There's no office, no account manager, and no meetings padded into the price — just one developer and the work. One page, built well, priced at what it takes."}},
+    {"@type": "Question", "name": "I already have a Facebook page — do I need a website?", "acceptedAnswer": {"@type": "Answer", "text": "Keep the Facebook page — they do different jobs. When someone searches your business name, your own website hands them your hours, menu, and directions in one tap, with no login and no algorithm. And it's yours: your name, your domain."}},
+    {"@type": "Question", "name": "Do we need to meet in person?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything happens by email or text — send your business name and details whenever you have a few minutes. You'll hear back when the site is ready to look at, within 48 hours."}},
+    {"@type": "Question", "name": "Who owns the domain name?", "acceptedAnswer": {"@type": "Answer", "text": "You do, registered in your own name. It runs about $12 a year, passed through at cost with no markup. Whatever happens down the road, the domain goes with you."}},
+    {"@type": "Question", "name": "What if I need changes later?", "acceptedAnswer": {"@type": "Answer", "text": "One round of revisions is included before you approve. After launch, an optional care plan ($30/month) covers content edits within 48 hours, hosting, and a monthly backup. It's month-to-month and you can cancel anytime."}},
+    {"@type": "Question", "name": "What about photos?", "acceptedAnswer": {"@type": "Answer", "text": "Phone photos of your actual shop, food, or chairs beat stock photos every time. If you don't have them handy, the site is built with clean placeholders and your photos are swapped in when you send them."}}
+  ]
 }
 </script>
 <style>
@@ -375,6 +389,23 @@
   .f-base a{color:#B9C4BD;text-decoration:underline;text-underline-offset:2px}
   .f-base a:hover{color:#F4F2E9}
 
+  /* ---------- mobile action bar ---------- */
+  .actionbar{display:none}
+  @media (max-width:760px){
+    body{padding-bottom:calc(3.6rem + env(safe-area-inset-bottom,0px))}
+    .actionbar{
+      position:fixed;inset:auto 0 0 0;z-index:60;display:flex;
+      background:var(--ink);padding:.5rem .6rem calc(.5rem + env(safe-area-inset-bottom,0px));
+      gap:.5rem;box-shadow:0 -6px 20px rgba(27,46,42,.25);
+    }
+    .actionbar a{
+      flex:1;display:flex;align-items:center;justify-content:center;gap:.4rem;
+      text-decoration:none;font-weight:700;font-size:.92rem;padding:.65rem .5rem;
+      border-radius:.55rem;color:var(--ink);background:var(--gold);
+    }
+    .actionbar a.quiet{background:transparent;color:#F4F2E9;border:1.5px solid rgba(244,242,233,.4)}
+  }
+
   /* ---------- reveal on scroll ---------- */
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
@@ -398,7 +429,7 @@
       <a class="navlink" href="#samples">Samples</a>
       <a class="navlink" href="#pricing">Pricing</a>
       <a class="navlink" href="#faq">FAQ</a>
-      <a class="btn-nav" href="mailto:maxwell.nm.fry@gmail.com?subject=Website%20for%20my%20business&amp;body=Business%20name%3A%0AWhat%20we%20do%3A%0A">Email me</a>
+      <a class="btn-nav" href="mailto:hello@getsitesprint.com?subject=Website%20for%20my%20business&amp;body=Business%20name%3A%0AWhat%20we%20do%3A%0A">Email me</a>
     </nav>
   </div>
   <div class="awning" aria-hidden="true"></div>
@@ -414,12 +445,16 @@
         <h1>Your business&rsquo;s website. Live in <span class="mark">48 hours</span>. <span class="money">$350</span> flat.</h1>
         <p class="lede sub">Half down to start. The other half only after you&rsquo;ve seen the finished site and approved it. No meetings, no monthly bill, no surprises.</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="mailto:maxwell.nm.fry@gmail.com?subject=Website%20for%20my%20business&amp;body=Business%20name%3A%0AWhat%20we%20do%3A%0A">
+          <a class="btn btn-primary" href="mailto:hello@getsitesprint.com?subject=Website%20for%20my%20business&amp;body=Business%20name%3A%0AWhat%20we%20do%3A%0A">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg>
             Email me your business name &mdash; that&rsquo;s step one
           </a>
+          <a class="btn btn-ghost" href="sms:+12157766767">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            or just text me
+          </a>
         </div>
-        <p class="hero-mailnote"><a href="mailto:maxwell.nm.fry@gmail.com">maxwell.nm.fry@gmail.com</a> or call/text <a href="tel:+12157766767">(215)&nbsp;776&#8209;6767</a> &mdash; a two-line message is plenty.</p>
+        <p class="hero-mailnote"><a href="mailto:hello@getsitesprint.com">hello@getsitesprint.com</a> or call/text <a href="tel:+12157766767">(215)&nbsp;776&#8209;6767</a> &mdash; a two-line message is plenty.</p>
       </div>
 
       <div class="ticket-slot">
@@ -589,7 +624,7 @@
             <li>One round of revisions included</li>
           </ul>
           <p class="p-terms">$175 deposit to start &rarr; I build in 48 hours &rarr; you approve &rarr; $175 balance.<br>Pay by PayPal invoice, Venmo, Zelle, or cash.</p>
-          <a class="btn btn-primary" href="mailto:maxwell.nm.fry@gmail.com?subject=Website%20for%20my%20business&amp;body=Business%20name%3A%0AWhat%20we%20do%3A%0A">Start with an email</a>
+          <a class="btn btn-primary" href="mailto:hello@getsitesprint.com?subject=Website%20for%20my%20business&amp;body=Business%20name%3A%0AWhat%20we%20do%3A%0A">Start with an email</a>
         </article>
         <article class="plan plan-care reveal">
           <p class="p-price">$30<small>/mo</small></p>
@@ -678,15 +713,30 @@
     <div class="f-cta">
       <h2>Two days from now, your business could be online.</h2>
       <p>One email starts the clock. Your business name and what you do &mdash; that&rsquo;s all I need.</p>
-      <a class="btn btn-primary" href="mailto:maxwell.nm.fry@gmail.com?subject=Website%20for%20my%20business&amp;body=Business%20name%3A%0AWhat%20we%20do%3A%0A">Email me your business name &mdash; that&rsquo;s step one</a>
-      <span class="f-mail"><a href="mailto:maxwell.nm.fry@gmail.com">maxwell.nm.fry@gmail.com</a> &middot; <a href="tel:+12157766767">(215)&nbsp;776&#8209;6767</a></span>
+      <a class="btn btn-primary" href="mailto:hello@getsitesprint.com?subject=Website%20for%20my%20business&amp;body=Business%20name%3A%0AWhat%20we%20do%3A%0A">Email me your business name &mdash; that&rsquo;s step one</a>
+      <span class="f-mail"><a href="mailto:hello@getsitesprint.com">hello@getsitesprint.com</a> &middot; <a href="tel:+12157766767">(215)&nbsp;776&#8209;6767</a></span>
     </div>
     <div class="f-base">
       <span>&copy; 2026 EdgeFinders, LLC &middot; SiteSprint &middot; Built by Max Fry &middot; Roswell, GA</span>
-      <span><a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a> &middot; $350 flat &middot; live in 48 hours &middot; approved before paid</span>
+      <span><a href="start.html">New client? Start here</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a> &middot; $350 flat &middot; live in 48 hours &middot; approved before paid</span>
     </div>
   </div>
 </footer>
+
+<nav class="actionbar" aria-label="Quick contact">
+  <a class="quiet" href="tel:+12157766767">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+  <a href="sms:+12157766767">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    Text me
+  </a>
+  <a class="quiet" href="mailto:hello@getsitesprint.com?subject=Website%20for%20my%20business&amp;body=Business%20name%3A%0AWhat%20we%20do%3A%0A">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg>
+    Email
+  </a>
+</nav>
 
 <script>
 (function(){

@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fadeline Barber Co. — Cuts, Fades, Beards &amp; Hot Towel Shaves</title>
+<meta name="description" content="Fadeline Barber Co. — walk-ins welcome. Cuts, skin fades, beard work, and hot towel shaves at straight prices. See the price board, meet the barbers, book a chair.">
+<meta name="theme-color" content="#0d0c0a">
+<style>
+  :root{
+    --ink:#0d0c0a;
+    --panel:#161310;
+    --panel-2:#1c1812;
+    --line:rgba(217,174,62,.22);
+    --gold:#d9ae3e;
+    --gold-bright:#e9c25a;
+    --cream:#f4ecdc;
+    --muted:#a99e88;
+    --red:#b3392f;
+    --display:"Avenir Next Condensed","AvenirNextCondensed-Heavy","Helvetica Neue Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+    --serif:Georgia,"Times New Roman",serif;
+    --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{
+    background:
+      radial-gradient(1100px 520px at 78% -8%, rgba(217,174,62,.07), transparent 62%),
+      var(--ink);
+    color:var(--cream);
+    font-family:var(--body);
+    font-size:1rem;
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%;display:block}
+  a{color:var(--gold);text-decoration:none}
+  a:hover{color:var(--gold-bright)}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+  .skip{position:absolute;left:-999px;top:8px;background:var(--gold);color:var(--ink);padding:.5rem 1rem;font-weight:700;z-index:60}
+  .skip:focus{left:8px}
+
+  .wrap{max-width:66rem;margin:0 auto;padding:0 1.25rem}
+
+  /* ---------- header ---------- */
+  .top{
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    padding:1.1rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex;align-items:center;gap:.6rem;color:var(--cream)}
+  .brand svg{width:22px;height:22px;flex:none}
+  .brand-name{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;
+    font-size:1.05rem;letter-spacing:.14em;white-space:nowrap;
+  }
+  .brand-name em{font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:0;color:var(--gold);font-size:.95em}
+  .top nav{display:flex;align-items:center;gap:1.4rem}
+  .top nav a{
+    color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;font-weight:600;
+  }
+  .top nav a:hover{color:var(--cream)}
+  .top nav a.book{
+    color:var(--ink);background:var(--gold);padding:.5rem .9rem;border-radius:999px;letter-spacing:.12em;
+  }
+  .top nav a.book:hover{background:var(--gold-bright);color:var(--ink)}
+  @media (max-width:719px){
+    .top nav a:not(.book){display:none}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:3.2rem 0 3.6rem}
+  .hero-row{display:flex;gap:1.4rem;align-items:stretch}
+  @media (min-width:720px){.hero{padding:4.5rem 0 5rem}.hero-row{gap:2.2rem}}
+
+  /* the barber pole — signature element */
+  .pole{flex:none;width:38px;display:flex;flex-direction:column}
+  @media (min-width:720px){.pole{width:56px}}
+  .pole-cap{
+    height:14px;border-radius:7px;
+    background:linear-gradient(180deg,#8a6c1e,var(--gold) 45%,#6d5416);
+    box-shadow:0 1px 0 rgba(0,0,0,.6);
+  }
+  .pole-glass{
+    flex:1;min-height:190px;margin:4px 3px;border-radius:999px;
+    background-image:
+      linear-gradient(90deg, rgba(0,0,0,.62), rgba(0,0,0,0) 32%, rgba(255,255,255,.16) 46%, rgba(0,0,0,0) 62%, rgba(0,0,0,.66)),
+      repeating-linear-gradient(45deg,
+        var(--red) 0 14px,
+        var(--cream) 14px 28px,
+        var(--gold) 28px 42px,
+        #16130d 42px 56px);
+    background-size:100% 100%, 100% 79.2px;
+    animation:spin 6.5s linear infinite;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.35), 0 0 26px rgba(217,174,62,.14);
+  }
+  @keyframes spin{
+    from{background-position:0 0, 0 0}
+    to{background-position:0 0, 0 79.2px}
+  }
+
+  .eyebrow{
+    font-size:.72rem;text-transform:uppercase;letter-spacing:.24em;color:var(--gold);font-weight:700;
+    display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;
+  }
+  .eyebrow em{font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:.02em;font-size:1.05rem;color:var(--muted);font-weight:400}
+  .hero h1{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;
+    font-size:clamp(2.7rem,9.5vw,5.6rem);
+    line-height:.94;letter-spacing:.005em;
+    margin:.9rem 0 1.1rem;
+  }
+  .hero h1 em{
+    font-family:var(--serif);font-style:italic;font-weight:400;text-transform:lowercase;
+    color:var(--gold);letter-spacing:0;
+  }
+  .hero p{max-width:34rem;color:var(--muted);font-size:1.02rem}
+  .hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.7rem}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:.55rem;
+    font-weight:700;font-size:.95rem;border-radius:999px;padding:.85rem 1.5rem;
+    border:1px solid transparent;
+  }
+  .btn svg{width:17px;height:17px;flex:none}
+  .btn-gold{background:var(--gold);color:var(--ink)}
+  .btn-gold:hover{background:var(--gold-bright);color:var(--ink)}
+  .btn-ghost{border-color:var(--line);color:var(--cream)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--cream)}
+
+  .hero-meta{margin-top:2rem;display:flex;gap:1.6rem;flex-wrap:wrap;font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.14em}
+  .hero-meta b{color:var(--cream);font-weight:700}
+
+  /* ---------- stripe divider ---------- */
+  .stripes{
+    height:7px;
+    background:repeating-linear-gradient(45deg, var(--gold) 0 9px, transparent 9px 22px);
+    opacity:.38;
+  }
+
+  /* ---------- shared section bits ---------- */
+  section{padding:3.6rem 0}
+  @media (min-width:720px){section{padding:4.6rem 0}}
+  .sec-head{margin-bottom:2.2rem}
+  .sec-head .eyebrow{margin-bottom:.5rem}
+  .sec-head h2{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;
+    font-size:clamp(1.9rem,5vw,2.9rem);line-height:1.02;
+  }
+  .sec-head h2 em{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:lowercase;color:var(--gold)}
+
+  /* ---------- services / price board ---------- */
+  .board{
+    background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);border-radius:14px;
+    padding:1.6rem 1.3rem;
+    box-shadow:inset 0 0 60px rgba(0,0,0,.35);
+  }
+  @media (min-width:720px){.board{padding:2.4rem 2.6rem}}
+  .menu{list-style:none;display:grid;gap:1.35rem 3rem}
+  @media (min-width:820px){.menu{grid-template-columns:1fr 1fr}}
+  .menu-row{display:flex;align-items:baseline;gap:.6rem}
+  .menu-name{
+    font-family:var(--display);font-weight:700;text-transform:uppercase;
+    letter-spacing:.06em;font-size:1.02rem;white-space:nowrap;
+  }
+  .menu-dots{flex:1;border-bottom:2px dotted rgba(217,174,62,.35);transform:translateY(-4px);min-width:1.5rem}
+  .menu-price{
+    font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;
+    font-size:1.05rem;white-space:nowrap;
+  }
+  .menu-desc{margin-top:.25rem;font-size:.86rem;color:var(--muted);line-height:1.5}
+  .board-note{
+    margin-top:1.9rem;padding-top:1.2rem;border-top:1px solid var(--line);
+    font-size:.86rem;color:var(--muted);
+  }
+  .board-note em{font-family:var(--serif);font-style:italic;color:var(--cream)}
+
+  /* ---------- barbers ---------- */
+  .chairs{display:grid;gap:1rem}
+  @media (min-width:720px){.chairs{grid-template-columns:repeat(3,1fr);gap:1.2rem}}
+  .chair{
+    background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:1.7rem 1.4rem 1.5rem;position:relative;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .chair:hover{border-color:rgba(217,174,62,.5);transform:translateY(-3px)}
+  .chair-no{
+    position:absolute;top:1.15rem;right:1.25rem;
+    font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700;
+  }
+  .avatar{
+    width:64px;height:64px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 32% 28%, #262013, var(--ink) 72%);
+    border:1px solid var(--gold);
+    box-shadow:0 0 0 4px rgba(217,174,62,.12);
+    font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:.05em;color:var(--gold);
+    margin-bottom:1rem;
+  }
+  .chair h3{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:1.15rem}
+  .chair-spec{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:.92rem;margin:.15rem 0 .6rem}
+  .chair p{font-size:.88rem;color:var(--muted)}
+
+  /* ---------- hours ---------- */
+  .hours-grid{display:grid;gap:2.2rem}
+  @media (min-width:820px){.hours-grid{grid-template-columns:1fr 1fr;align-items:start;gap:3rem}}
+  .hours{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .hours > div{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding:.8rem 1.3rem;border-bottom:1px solid rgba(217,174,62,.12);
+    background:var(--panel);
+  }
+  .hours > div:last-child{border-bottom:none}
+  .hours dt{font-weight:600;font-size:.92rem;display:flex;align-items:baseline;gap:.6rem}
+  .hours dd{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.92rem}
+  .hours .closed dd{color:#7c7260;font-family:var(--serif);font-style:italic}
+  .hours .today{background:var(--panel-2)}
+  .hours .today dt,.hours .today dd{color:var(--gold);font-weight:700}
+  .today-tag{
+    font-size:.6rem;text-transform:uppercase;letter-spacing:.18em;font-weight:800;
+    background:var(--gold);color:var(--ink);border-radius:999px;padding:.12rem .5rem;
+    display:none;
+  }
+  .today .today-tag{display:inline-block}
+  .hours-copy p{color:var(--muted);max-width:30rem}
+  .hours-copy p + p{margin-top:.9rem}
+  .hours-copy strong{color:var(--cream)}
+
+  /* ---------- book CTA band ---------- */
+  .band{
+    background:linear-gradient(180deg,var(--gold-bright),var(--gold));
+    color:var(--ink);
+  }
+  .band .eyebrow{color:rgba(13,12,10,.72)}
+  .band h2{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;
+    font-size:clamp(2.1rem,6vw,3.4rem);line-height:.98;margin:.5rem 0 1rem;
+  }
+  .band h2 em{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:lowercase}
+  .band p{max-width:36rem;color:rgba(13,12,10,.82);font-size:1.02rem}
+  .band-ctas{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center;margin-top:1.8rem}
+  .btn-ink{background:var(--ink);color:var(--gold)}
+  .btn-ink:hover{background:#000;color:var(--gold-bright)}
+  .band-alt{font-size:.92rem;color:rgba(13,12,10,.75)}
+  .band-alt a{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .band-alt a:hover{color:#000}
+
+  /* ---------- location ---------- */
+  .loc-grid{display:grid;gap:2rem}
+  @media (min-width:820px){.loc-grid{grid-template-columns:1fr 1.15fr;align-items:center;gap:3rem}}
+  .loc address{font-style:normal}
+  .loc-street{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;
+    font-size:1.6rem;letter-spacing:.04em;line-height:1.1;
+  }
+  .loc-sub{font-family:var(--serif);font-style:italic;color:var(--gold);margin:.3rem 0 1.1rem}
+  .loc p{color:var(--muted);font-size:.94rem;max-width:28rem}
+  .loc p + p{margin-top:.7rem}
+  .map-card{
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);
+  }
+  .map-note{
+    padding:.7rem 1.1rem;font-size:.76rem;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.14em;border-top:1px solid var(--line);
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:2.6rem 0 6.5rem; /* extra bottom room for the sample badge */
+    font-size:.85rem;color:var(--muted);
+  }
+  .foot-row{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;align-items:baseline}
+  .foot-brand{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--cream)}
+  .foot-sprint{margin-top:1.4rem;font-size:.8rem}
+  .foot-sprint a{font-weight:700}
+
+  /* ---------- fixed sample badge ---------- */
+  .sample-badge{
+    position:fixed;left:.9rem;bottom:.9rem;z-index:50;
+    display:inline-flex;align-items:center;gap:.55rem;
+    background:var(--gold);color:var(--ink);
+    border-radius:999px;padding:.5rem .95rem .5rem .55rem;
+    font-size:.74rem;font-weight:600;line-height:1.25;
+    box-shadow:0 6px 22px rgba(0,0,0,.55);
+    transition:transform .15s ease;
+  }
+  .sample-badge:hover{transform:translateY(-2px);color:var(--ink)}
+  .sb-tag{
+    background:var(--ink);color:var(--gold);border-radius:999px;
+    padding:.28rem .6rem;font-size:.62rem;font-weight:800;
+    text-transform:uppercase;letter-spacing:.14em;white-space:nowrap;
+  }
+  .sb-text b{font-weight:800}
+  @media (max-width:479px){
+    .sample-badge{font-size:.68rem;padding:.42rem .8rem .42rem .48rem;gap:.45rem}
+    .sb-tag{font-size:.56rem}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- SAMPLE SITE badge — links back to the SiteSprint portfolio -->
+<a class="sample-badge" href="../index.html">
+  <span class="sb-tag">Sample site</span>
+  <span class="sb-text">built by <b>SiteSprint</b> · your site live in <b>48 hrs</b></span>
+</a>
+
+<header class="wrap">
+  <div class="top">
+    <a class="brand" href="#" aria-label="Fadeline Barber Co. — home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#d9ae3e" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <circle cx="6" cy="5.5" r="2.4"/>
+        <circle cx="6" cy="18.5" r="2.4"/>
+        <path d="M8.2 7 20.5 16.8M8.2 17 20.5 7.2"/>
+      </svg>
+      <span class="brand-name">Fadeline <em>Barber Co.</em></span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#services">Prices</a>
+      <a href="#barbers">Barbers</a>
+      <a href="#hours">Hours</a>
+      <a class="book" href="#book">Book a chair</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero wrap" aria-label="Welcome">
+    <div class="hero-row">
+      <div class="pole" aria-hidden="true">
+        <div class="pole-cap"></div>
+        <div class="pole-glass"></div>
+        <div class="pole-cap"></div>
+      </div>
+      <div>
+        <p class="eyebrow">Est. 2026 <em>· walk-ins welcome</em></p>
+        <h1>Walk in scruffy.<br>Walk out <em>sharp.</em></h1>
+        <p>Cuts, skin fades, beard work, and hot towel shaves — done right, at prices posted on the wall. Grab a chair when you're passing, or book one and skip the wait.</p>
+        <div class="hero-ctas">
+          <!-- TODO: add phone — swap this mailto for a tel: click-to-call link -->
+          <a class="btn btn-gold" href="mailto:maxwell.nm.fry@gmail.com?subject=Chair%20booking%20—%20Fadeline%20Barber%20Co.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+            Book a chair
+          </a>
+          <a class="btn btn-ghost" href="#services">See prices</a>
+        </div>
+        <p class="hero-meta"><span>Cuts from <b>$30</b></span> <span>Hot towel shaves</span> <span>No fuss</span></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripes" aria-hidden="true"></div>
+
+  <!-- ============ SERVICES / PRICE BOARD ============ -->
+  <section id="services" class="wrap" aria-label="Services and prices">
+    <div class="sec-head">
+      <p class="eyebrow">The board</p>
+      <h2>Straight prices, <em>no surprises.</em></h2>
+    </div>
+    <div class="board">
+      <ul class="menu">
+        <li>
+          <div class="menu-row"><span class="menu-name">Classic cut</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">$30</span></div>
+          <p class="menu-desc">Clippers or scissors, finished with a straight-razor neckline.</p>
+        </li>
+        <li>
+          <div class="menu-row"><span class="menu-name">Skin fade</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">$35</span></div>
+          <p class="menu-desc">Zero, low, mid, or high — blended tight and faded clean.</p>
+        </li>
+        <li>
+          <div class="menu-row"><span class="menu-name">Beard trim &amp; line-up</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">$20</span></div>
+          <p class="menu-desc">Shaped, edged with a razor, and finished with beard oil.</p>
+        </li>
+        <li>
+          <div class="menu-row"><span class="menu-name">Hot towel shave</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">$40</span></div>
+          <p class="menu-desc">Straight razor, hot lather, cold finish. Thirty minutes to yourself.</p>
+        </li>
+        <li>
+          <div class="menu-row"><span class="menu-name">Cut + beard</span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">$45</span></div>
+          <p class="menu-desc">The full reset. Best value on the board.</p>
+        </li>
+        <li>
+          <div class="menu-row"><span class="menu-name">Kids' cut <span aria-hidden="true">(12 &amp; under)</span></span><span class="menu-dots" aria-hidden="true"></span><span class="menu-price">$22</span></div>
+          <p class="menu-desc">Patience included at no extra charge.</p>
+        </li>
+      </ul>
+      <p class="board-note">Cash and card both welcome. Not sure what to ask for? <em>Sit down and describe your week — we'll take it from there.</em></p>
+    </div>
+  </section>
+
+  <!-- ============ BARBERS ============ -->
+  <section id="barbers" class="wrap" aria-label="Our barbers">
+    <div class="sec-head">
+      <p class="eyebrow">The chairs</p>
+      <h2>Three barbers, <em>one standard.</em></h2>
+    </div>
+    <div class="chairs">
+      <article class="chair">
+        <p class="chair-no">Chair 01</p>
+        <div class="avatar" aria-hidden="true">DR</div>
+        <h3>Dante Reyes</h3>
+        <p class="chair-spec">Fades &amp; tapers</p>
+        <p>Fast with the clippers, picky about the edges. If you want it faded to skin and lined like it was drawn on, this is your chair.</p>
+      </article>
+      <article class="chair">
+        <p class="chair-no">Chair 02</p>
+        <div class="avatar" aria-hidden="true">MC</div>
+        <h3>Marcus Cole</h3>
+        <p class="chair-spec">Classic cuts &amp; shaves</p>
+        <p>Scissor work, side parts, and the shop's hot towel shaves. The chair to ask for if your barber growing up got it right.</p>
+      </article>
+      <article class="chair">
+        <p class="chair-no">Chair 03</p>
+        <div class="avatar" aria-hidden="true">TV</div>
+        <h3>Tommy Vu</h3>
+        <p class="chair-spec">Beards &amp; first cuts</p>
+        <p>Beard shaping down to the last whisker, and the patient one when it's your kid's first time in a barber chair.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="stripes" aria-hidden="true"></div>
+
+  <!-- ============ HOURS ============ -->
+  <section id="hours" class="wrap" aria-label="Opening hours">
+    <div class="sec-head">
+      <p class="eyebrow">Hours</p>
+      <h2>When the pole <em>is spinning.</em></h2>
+    </div>
+    <div class="hours-grid">
+      <dl class="hours">
+        <div class="closed" data-day="1"><dt>Monday <span class="today-tag">Today</span></dt><dd>Closed</dd></div>
+        <div data-day="2"><dt>Tuesday <span class="today-tag">Today</span></dt><dd>9:00 am – 7:00 pm</dd></div>
+        <div data-day="3"><dt>Wednesday <span class="today-tag">Today</span></dt><dd>9:00 am – 7:00 pm</dd></div>
+        <div data-day="4"><dt>Thursday <span class="today-tag">Today</span></dt><dd>9:00 am – 7:00 pm</dd></div>
+        <div data-day="5"><dt>Friday <span class="today-tag">Today</span></dt><dd>9:00 am – 7:00 pm</dd></div>
+        <div data-day="6"><dt>Saturday <span class="today-tag">Today</span></dt><dd>8:00 am – 4:00 pm</dd></div>
+        <div class="closed" data-day="0"><dt>Sunday <span class="today-tag">Today</span></dt><dd>Closed</dd></div>
+      </dl>
+      <div class="hours-copy">
+        <p><strong>Walk-ins are first come, first served.</strong> The earlier in the day you come by, the shorter the wait — Saturdays fill up by mid-morning.</p>
+        <p>Booked chairs are held for ten minutes past your time. Running late? Just let us know and we'll shuffle things around.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOOK CTA ============ -->
+  <section id="book" class="band" aria-label="Book a chair">
+    <div class="wrap">
+      <p class="eyebrow">Walk in or book</p>
+      <h2>Your chair is <em>waiting.</em></h2>
+      <p>Walk in any day we're open — the board above tells you what it costs, and the wait is usually shorter than you think. Want a set time instead? Send us a note with the day and hour that suits you, and we'll hold a chair.</p>
+      <div class="band-ctas">
+        <!-- TODO: add phone — replace this mailto with a tel: click-to-call button -->
+        <a class="btn btn-ink" href="mailto:maxwell.nm.fry@gmail.com?subject=Chair%20booking%20—%20Fadeline%20Barber%20Co.">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+          Book a chair by email
+        </a>
+        <p class="band-alt">or write to <a href="mailto:maxwell.nm.fry@gmail.com">maxwell.nm.fry@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOCATION ============ -->
+  <section id="find-us" class="loc wrap" aria-label="Location">
+    <div class="sec-head">
+      <p class="eyebrow">Find us</p>
+      <h2>On the corner, <em>under the pole.</em></h2>
+    </div>
+    <div class="loc-grid">
+      <div>
+        <address>
+          <p class="loc-street">214 Main Street</p>
+          <p class="loc-sub">corner of Main &amp; 3rd</p>
+        </address>
+        <p>Look for the spinning pole out front. Street parking along Main, and a free lot behind the building off 3rd.</p>
+        <p>Two blocks from the downtown transit stop — most folks walk in on their lunch break and walk out with time to spare.</p>
+      </div>
+      <div class="map-card">
+        <svg viewBox="0 0 440 280" role="img" aria-label="Simple street map showing Fadeline Barber Co. at the corner of Main Street and 3rd Avenue">
+          <rect width="440" height="280" fill="#12100b"/>
+          <!-- minor streets -->
+          <g stroke="#231e15" stroke-width="7">
+            <line x1="0" y1="52" x2="440" y2="52"/>
+            <line x1="0" y1="228" x2="440" y2="228"/>
+            <line x1="72" y1="0" x2="72" y2="280"/>
+            <line x1="368" y1="0" x2="368" y2="280"/>
+          </g>
+          <!-- main street + 3rd ave -->
+          <g stroke="#332b1c" stroke-width="13">
+            <line x1="0" y1="140" x2="440" y2="140"/>
+            <line x1="220" y1="0" x2="220" y2="280"/>
+          </g>
+          <g stroke="#4b3f27" stroke-width="1.5" stroke-dasharray="7 8">
+            <line x1="0" y1="140" x2="440" y2="140"/>
+            <line x1="220" y1="0" x2="220" y2="280"/>
+          </g>
+          <!-- blocks -->
+          <g fill="#181510">
+            <rect x="86" y="64" width="120" height="62" rx="3"/>
+            <rect x="234" y="64" width="120" height="62" rx="3"/>
+            <rect x="86" y="154" width="120" height="60" rx="3"/>
+          </g>
+          <!-- the shop block -->
+          <rect x="234" y="154" width="120" height="60" rx="3" fill="#1e1910" stroke="#d9ae3e" stroke-width="1.4"/>
+          <!-- street labels -->
+          <g fill="#8a7d63" font-family="Arial, sans-serif" font-size="10" letter-spacing="3">
+            <text x="18" y="132">MAIN ST</text>
+            <text x="229" y="80" transform="rotate(90 229 80)">3RD AVE</text>
+          </g>
+          <!-- pin -->
+          <g>
+            <circle cx="243" cy="151" r="16" fill="rgba(217,174,62,.15)"/>
+            <path d="M243 130c-7.2 0-13 5.7-13 12.8 0 9.6 13 21.2 13 21.2s13-11.6 13-21.2c0-7.1-5.8-12.8-13-12.8z" fill="#d9ae3e"/>
+            <circle cx="243" cy="143" r="4.6" fill="#0d0c0a"/>
+          </g>
+          <text x="290" y="188" fill="#d9ae3e" font-family="Arial, sans-serif" font-size="11" font-weight="bold" letter-spacing="1.5" text-anchor="middle">FADELINE</text>
+          <text x="290" y="202" fill="#8a7d63" font-family="Arial, sans-serif" font-size="9" letter-spacing="2" text-anchor="middle">BARBER CO.</text>
+        </svg>
+        <p class="map-note">Map preview — the live site embeds interactive Google Maps</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <p class="foot-brand">Fadeline Barber Co.</p>
+      <p>214 Main Street · <a href="mailto:maxwell.nm.fry@gmail.com">maxwell.nm.fry@gmail.com</a></p>
+      <!-- TODO: add phone -->
+    </div>
+    <p class="foot-sprint">Sample site by <a href="../index.html">SiteSprint</a> — a one-page website like this one, live in 48 hours, $350 flat.</p>
+  </div>
+</footer>
+
+<script>
+  // Highlight today's row on the hours board.
+  (function(){
+    var d = new Date().getDay(); // 0 = Sunday
+    var row = document.querySelector('.hours [data-day="' + d + '"]');
+    if (row) row.classList.add('today');
+  })();
+</script>
+
+</body>
+</html>

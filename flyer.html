@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SiteSprint flyer — print me</title>
+<style>
+  :root{
+    --paper:#FBFAF6; --ink:#1B2E2A; --green:#17695A; --green-deep:#0E4A3F;
+    --gold:#FFC53D; --ticket:#FFFDF4; --muted:#5C6B66; --line:#E5E1D4;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#e8e6de;font-family:var(--sans);color:var(--ink);display:flex;justify-content:center;padding:1rem}
+  .sheet{
+    background:var(--paper);width:8.5in;min-height:11in;padding:.55in .6in;
+    display:flex;flex-direction:column;gap:.32in;box-shadow:0 10px 40px rgba(27,46,42,.25);
+  }
+  .awning{height:12px;background:radial-gradient(circle 12px at 12px -3px,var(--green) 11px,transparent 12px);background-size:24px 12px;background-repeat:repeat-x;margin:-.25in -.6in .05in}
+  .brand{font-weight:800;font-size:1.3rem;letter-spacing:-.02em}
+  .brand b{color:var(--green)} .brand i{font-style:normal;color:var(--gold)}
+  h1{font-size:2.6rem;line-height:1.08;letter-spacing:-.03em;font-weight:800}
+  .mark{background:var(--gold);border-radius:.22em;padding:.02em .18em}
+  .money{font-family:var(--mono);font-weight:700}
+  .sub{font-size:1.12rem;color:var(--muted);margin-top:.45rem;max-width:38em}
+  .steps{display:flex;gap:.25in;border-block:2px solid var(--ink);padding:.22in 0}
+  .step{flex:1}
+  .step .n{font-family:var(--mono);font-size:.75rem;font-weight:700;color:var(--green);letter-spacing:.12em;text-transform:uppercase}
+  .step h3{font-size:1.02rem;margin:.25rem 0 .2rem}
+  .step p{font-size:.9rem;color:var(--muted);line-height:1.45}
+  .mid{display:flex;gap:.35in;align-items:stretch}
+  .incl{flex:1.15}
+  .incl h2{font-size:1.15rem;margin-bottom:.6rem}
+  .incl ul{list-style:none}
+  .incl li{padding:.28rem 0 .28rem 1.4rem;position:relative;font-size:.98rem;border-bottom:1px dashed var(--line)}
+  .incl li::before{content:"✓";position:absolute;left:.15rem;color:var(--green);font-weight:800}
+  .ticket{
+    flex:.85;background:var(--ticket);border:1px solid #E8E2CC;border-radius:12px;
+    font-family:var(--mono);padding:1.1rem 1.15rem;align-self:flex-start;transform:rotate(1.4deg);
+  }
+  .t-head{font-size:.72rem;letter-spacing:.18em;font-weight:700;text-transform:uppercase;text-align:center}
+  .t-rows{list-style:none;margin-top:.8rem}
+  .t-rows li{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;font-size:.85rem;padding-block:.32rem}
+  .t-rows .dots{flex:1;border-bottom:2px dotted #D8D2BC;transform:translateY(-4px)}
+  .t-rows .amt{font-weight:700} .t-rows .amt.gold{background:var(--gold);padding:.04em .3em;border-radius:.3em}
+  .t-note{font-size:.7rem;color:var(--muted);margin-top:.7rem;line-height:1.5;border-top:2px dashed #CFC8AF;padding-top:.6rem}
+  .guarantee{
+    background:var(--green);color:#fff;border-radius:10px;padding:.32in .35in;
+    display:flex;gap:.3in;align-items:center;
+  }
+  .guarantee .big{font-size:1.25rem;font-weight:800;line-height:1.25;flex:1.2}
+  .guarantee p{flex:1;font-size:.92rem;color:#DFEDE8;line-height:1.5}
+  .contact{display:flex;justify-content:space-between;align-items:flex-end;gap:.3in;margin-top:auto}
+  .contact .who{font-size:.95rem;line-height:1.55}
+  .contact .who b{font-size:1.05rem}
+  .contact .reach{text-align:right;font-family:var(--mono);font-size:.95rem;line-height:1.7}
+  .reach a{color:var(--green-deep);text-decoration:none;font-weight:700}
+  .url{background:var(--ink);color:var(--gold);padding:.4rem .7rem;border-radius:.4rem;font-family:var(--mono);font-size:.95rem;display:inline-block;margin-top:.2rem}
+  @media print{
+    body{background:none;padding:0}
+    .sheet{box-shadow:none;width:auto;min-height:auto}
+    @page{margin:0.4in}
+  }
+  @media (max-width:820px){ .sheet{width:100%;min-height:auto} .mid,.steps,.guarantee,.contact{flex-direction:column} .contact .reach{text-align:left} }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="awning"></div>
+  <div class="brand">Site<b>Sprint</b><i>⚡</i></div>
+  <div>
+    <h1>Your business&rsquo;s website.<br>Live in <span class="mark">48 hours</span>. <span class="money">$350</span> flat.</h1>
+    <p class="sub">No meetings. No monthly bill. And you don&rsquo;t pay the second half until you&rsquo;ve seen your finished site and approved it.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="n">Step 1 · 5 minutes</div><h3>Text or email me</h3><p>Your business name and what you do. That&rsquo;s genuinely all it takes to start.</p></div>
+    <div class="step"><div class="n">Step 2 · 48 hours</div><h3>I build it</h3><p>A clean, professional one-page site that works on every phone.</p></div>
+    <div class="step"><div class="n">Step 3 · you decide</div><h3>Approve, then pay</h3><p>You see the finished site first. Happy? Pay the balance and it&rsquo;s yours.</p></div>
+  </div>
+  <div class="mid">
+    <div class="incl">
+      <h2>Every site includes</h2>
+      <ul>
+        <li>Your hours, services or menu, and photos</li>
+        <li>Google Maps + directions</li>
+        <li>Tap-to-call button for mobile customers</li>
+        <li>Basic SEO — show up when neighbors search</li>
+        <li>Your own domain (you own it, ~$12/yr at cost)</li>
+        <li>One round of changes included</li>
+      </ul>
+    </div>
+    <div class="ticket">
+      <div class="t-head">Work order</div>
+      <ul class="t-rows">
+        <li><span>One-page website</span><span class="dots"></span><span class="amt gold">$350</span></li>
+        <li><span>Deposit to start</span><span class="dots"></span><span class="amt">$175</span></li>
+        <li><span>Balance</span><span class="dots"></span><span class="amt">on approval</span></li>
+        <li><span>Care plan (optional)</span><span class="dots"></span><span class="amt">$30/mo</span></li>
+      </ul>
+      <p class="t-note">Care plan: hosting, edits within 48 hrs, monthly backup. Skip it and there&rsquo;s no ongoing cost at all.</p>
+    </div>
+  </div>
+  <div class="guarantee">
+    <div class="big">If you don&rsquo;t love it, you don&rsquo;t pay the balance.</div>
+    <p>Elsewhere this runs $2,000+ and takes six weeks. I keep it to one great page, done fast, priced for local businesses.</p>
+  </div>
+  <div class="contact">
+    <div class="who"><b>Max Fry</b> — web developer, Roswell GA<br>See real examples of my work:<br><span class="url">skeloman24.github.io/sitesprint</span></div>
+    <div class="reach"><a href="tel:+12157766767">(215) 776-6767</a><br><a href="mailto:maxwell.nm.fry@gmail.com">maxwell.nm.fry@gmail.com</a></div>
+  </div>
+</div>
+</body>
+</html>
